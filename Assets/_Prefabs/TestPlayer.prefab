@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7853315201094050306}
   m_Layer: 0
   m_Name: PlayerCamera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,13 +64,13 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: e373d636e8e66ea4299da0632e774305, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7853315201498694570}
   m_Layer: 0
   m_Name: TestPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ Rigidbody:
   m_GameObject: {fileID: 7853315201498694565}
   serializedVersion: 2
   m_Mass: 75
-  m_Drag: 1
+  m_Drag: 6
   m_AngularDrag: 250
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -150,7 +150,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7853315201498694565}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 94c4574e578e3a44fbe9480e093d2e4a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -170,15 +170,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  jumpHeight: 300
-  airMoveMult: 0.1
-  groundCheckDist: 1.25
   rotateSpeed: 120
-  smoothTurn: 0.03
+  smoothAim: 1
+  smoothTurn: 0.04
+  smoothRecenter: 1
+  recenteringDetectAngleMin: 5
+  recenteringSmoothness: 0.005
+  recenteringDelay: 0.5
+  jumpHeight: 1500
+  airMoveMult: 1
+  groundCheckDist: 1.125
+  enhancedGravity: 6
+  inAirPhysMat: {fileID: 13400000, guid: 3fff7c0091c2874489351ac1075e1964, type: 2}
+  groundedPhysMat: {fileID: 13400000, guid: 94c4574e578e3a44fbe9480e093d2e4a, type: 2}
   projectile: {fileID: 4672208320710701802, guid: 4eac19a5285d1bf4095a7f2cddee796a,
     type: 3}
-  playerCamera: {fileID: 7853315201094050305}
   weaponOrigin: {fileID: 7853315202069887562}
+  playerCamera: {fileID: 7853315201094050305}
   moveAction:
     m_Name: Move
     m_Type: 0
