@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     public int recenteringDetectAngleMin;
     public float recenteringSmoothness;
     public float recenteringDelay;
+    public Vector2 verticalLimit;
+
 
     [Header("Jumping Settings")]
     public float jumpHeight;
@@ -172,7 +174,7 @@ public class PlayerControl : MonoBehaviour
         //and the camera aims up or down
         var scaledRotateSpeed = rotateSpeed * Time.deltaTime;
         m_Rotation.y += rotate.x * scaledRotateSpeed;
-        c_Rotation.x = Mathf.Clamp(c_Rotation.x - rotate.y * scaledRotateSpeed, -89, 89);
+        c_Rotation.x = Mathf.Clamp(c_Rotation.x - rotate.y * scaledRotateSpeed, verticalLimit.y, verticalLimit.x);
         //Support for the re-centering smooth blend
         if (smoothRecenter)
         {
